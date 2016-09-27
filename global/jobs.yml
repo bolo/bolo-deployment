@@ -13,6 +13,7 @@ jobs:
       - { release: bolo, name: bolo }
       - { release: bolo, name: dbolo }
       - { release: bolo, name: rrd }
+      - { release: bolo, name: rrdcached }
       - { release: bolo, name: gnossis }
 
       - { release: toolbelt, name: toolbelt }
