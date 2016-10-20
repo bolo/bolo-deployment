@@ -1,0 +1,26 @@
+---
+meta:
+  az: (( param "What availability zone is Bolo deployed to?" ))
+
+resource_pools:
+- name:     small
+  network:  bolo
+  stemcell: (( grab meta.stemcell ))
+
+  cloud_properties:
+    instance_type: m1.medium
+    availability_zone: (( grab meta.az ))
+
+compilation:
+  network: bolo
+  reuse_compilation_vms: true
+  workers: 4
+
+  cloud_properties:
+    instance_type: m1.large
+    availability_zone: (( grab meta.az ))
+
+jobs:
+- name: bolo
+  resource_pool: small
+
